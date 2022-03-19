@@ -1,17 +1,12 @@
-import './App.css';
-import * as React from 'react';
-import ReactDOM from 'react-dom';
-import Button from '@mui/material/Button';
+import * as React from "react";
+// import Button from "@mui/material/Button";
+import RoutesList from "./components/routes";
 
-console.log(process.env.REACT_APP_API_KEY)
+
 function App() {
-  return (
-    <div className="App">
-     
-        <Button variant="contained">Hello World</Button>
-    </div>
-  );
+  return <div className="App">
+    <RoutesList/>
+  </div>
+  
 }
 export default App;
-
-

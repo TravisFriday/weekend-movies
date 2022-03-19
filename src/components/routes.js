@@ -1,11 +1,16 @@
 import React, { Component } from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./home/home";
+import Liked from "./liked/liked";
 
-const Routes= () => {
-<Switch>
-<Route exact path="/" component={Home} />
-<Route path="/liked" component={Liked} />
-<Route component={Home} />
-</Switch>
-}
 
-export default Main;
+const RoutesList = () => (
+<Routes>
+    <Route exact path="/" element={<Home/>} />
+    <Route path="/liked" element={<Liked/>} />
+    <Route component={Home} />
+</Routes>
+)
+
+export default RoutesList;
+ 
