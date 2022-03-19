@@ -1,6 +1,12 @@
 # Weekend: The Movie Hub
 This is a front-end web application that would display all your movies. Users will also have the ability to keep track of all the movies that have been liked.
 
+## Project Design
+
+### [Design Doc](https://docs.google.com/document/d/1DHSacd4m1-QP41E7bZrgM8BjDcCVP_tVVHQ_PQTNjJ4/edit?usp=sharing)
+
+### [Wire Frame](https://www.figma.com/file/WXKfquRWZGtLL8Pnrlfnbb/Untitled?node-id=0%3A1)
+
 ## Here is how to setup this project
 
 1. Clone the repository
