@@ -1,4 +1,5 @@
 # Weekend: The Movie Hub
+
 This is a front-end web application that would display all your movies. Users will also have the ability to keep track of all the movies that have been liked.
 
 ## Project Design
@@ -11,7 +12,12 @@ This is a front-end web application that would display all your movies. Users wi
 
 1. Clone the repository
 2. Run the command `npm install` or `yarn install` to install all of the dependancies
-3. Add the API Key to the environment variable `movieKey`, in order to make the API request
+3. In order to make the API request work, you need to create a `.env` file on the root of the project, then in the file add:
+
+```
+    REACT_APP_API_KEY=<insert api key here>
+```
+
 4. To run the App in Development mode run `npm start` or `yarn start`
 5. To run all the unit tests in this application run `npm test` or `yarn test`
 
