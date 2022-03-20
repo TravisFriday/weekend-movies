@@ -13,9 +13,7 @@ ReactDOM.render(
       <Router>
         <App />
       </Router>
-      ,
     </QueryClientProvider>
-    ,
   </React.StrictMode>,
   document.getElementById("root")
 );
