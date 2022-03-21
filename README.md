@@ -17,7 +17,7 @@ This is a front-end web application that would display all your movies. Users wi
 ```
     REACT_APP_API_KEY=<insert api key here>
 ```
-NB: You will need to re-run the application if you created the `.env` file with the key file after you run the application.
+    NB: You will need to re-run the application if you created the `.env` file with the key file after you run the application.
 4. To run the App in Development mode run `npm start` or `yarn start`
 5. To run all the unit tests in this application run `npm test` or `yarn test`
 
