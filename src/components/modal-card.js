@@ -13,9 +13,9 @@ export default function ModalCard({
   movie_id,
 }) {
   return (
-    <Card>
+    <Card sx={{backgroundColor: "#1e2126"}}>
       <CardMedia component="img" image={backdrop_path} alt={original_title} />
-      <CardContent>
+      <CardContent sx={{color: "white"}}>
         <Typography
           variant="overline"
           sx={{ fontSize: "1.2rem", fontWeight: "500" }}
@@ -37,7 +37,7 @@ export default function ModalCard({
         </Typography>
         <Typography
           variant="body1"
-          sx={{ fontSize: "1.2rem", fontWeight: "400" }}
+          sx={{ fontSize: "1.2rem", fontWeight: "300" }}
         >
           {overview}
         </Typography>

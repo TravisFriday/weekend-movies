@@ -6,11 +6,13 @@ import PageContainer from "../components/page-container";
 import { LinearProgress } from "@mui/material";
 
 const Home = () => {
+  //hook
   const queryClient = useQueryClient();
+  //get query from the cache
   const data = queryClient.getQueryData("POPULAR_MOVIES");
 
   return (
-    <PageContainer>
+    <PageContainer title={"Popular Movies"}>
       {data ? (
         <div>
           <MovieList movies={organizePopularMovies(data.data.results)} />

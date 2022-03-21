@@ -15,7 +15,6 @@ export const organizePopularMovies = (data) => {
       movie_id: movie.id.toString(),
     };
   });
-  console.log(json);
   return json;
 };
 
@@ -28,10 +27,10 @@ export const getLikedMovies = (likedMoviesID, movies) => {
   const likedMovies = popularMovies.filter((movie) => {
     return likedMoviesIDKeys.includes(movie["movie_id"].toString());
   });
-  console.log(likedMovies);
   return likedMovies;
 };
 
+//adds custom theme
 export const theme = createTheme({
   backgroundColor: "#1e2126",
 });

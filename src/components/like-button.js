@@ -6,15 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { addLikedMovie, removeLikedMovie } from "../redux/likedSlice";
 
 export default function LikeButton({ movie_id }) {
+  //hooks
   const { liked } = useSelector((state) => state.liked);
   const [isLiked, setIsLiked] = useState(movie_id in liked);
   const dispatch = useDispatch();
 
+  //updates the redux store liked state
   useEffect(() => {
     if (isLiked === true) {
       dispatch(addLikedMovie(movie_id));
     } else if (isLiked === false) {
-      console.log(isLiked);
       dispatch(removeLikedMovie(movie_id));
     }
   }, [setIsLiked, isLiked, dispatch, movie_id, liked]);

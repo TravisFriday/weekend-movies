@@ -1,18 +1,25 @@
-import { makeStyles } from "@mui/styles";
 import Container from "@mui/material/Container";
+import { Typography } from "@mui/material";
 
-const useStyles = makeStyles((theme) => ({
+const styles = {
   container: {
-    paddingTop: theme.spacing(2),
+    paddingTop: "2vh",
     width: "100vw",
     minHeight: "100vh",
   },
-}));
+  title:{
+    color: "white",
+    display: 'flex',
+    justifyContent: 'center',
+    paddingBottom: '2vh',
+  }
+}
 
-export default function PageContainer({ children }) {
-  const classes = useStyles();
+export default function PageContainer({ children, title }) {
+  console.log(title)
   return (
-    <Container className={classes.container} maxWidth="xl">
+    <Container sx={{...styles.container}} maxWidth="xl">
+      <Typography variant="h4" sx={{...styles.title }}>{title}</Typography>
       {children}
     </Container>
   );

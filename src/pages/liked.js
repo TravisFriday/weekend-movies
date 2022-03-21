@@ -1,24 +1,24 @@
 import React from "react";
 import { useQueryClient } from "react-query";
 import PageContainer from "../components/page-container";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getLikedMovies } from "../utils/utils";
 import MovieList from "../components/movie-list";
 
 const Liked = () => {
+  //hooks
   const queryClient = useQueryClient();
-  const data = queryClient.getQueryData("POPULAR_MOVIES");
   const { liked } = useSelector((state) => state.liked);
+  
+  const data = queryClient.getQueryData("POPULAR_MOVIES");
   const formattedLikedMovies = data
     ? getLikedMovies(liked, data.data.results)
     : null;
   return (
-    <PageContainer>
-      <div>
+    <PageContainer title={"Liked Movies"}>
         {formattedLikedMovies && (
-          <MovieList movies={formattedLikedMovies} isLikedPage={true} />
+          <MovieList movies={formattedLikedMovies}  />
         )}
-      </div>
     </PageContainer>
   );
 };

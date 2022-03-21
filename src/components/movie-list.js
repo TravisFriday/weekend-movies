@@ -25,10 +25,3 @@ export default function MovieList({ movies }, props) {
   );
 }
 
-export function WrappedMovieList({ movies, isLikedPage }) {
-  return (
-    <>
-      <MovieList />
-    </>
-  );
-}

@@ -61,7 +61,7 @@ export default function MovieCard(props) {
         component="div"
         sx={{
           color: "white",
-          fontSize: "0.90rem",
+          fontSize: "1rem",
           lineHeight: "1rem",
           paddingTop: "0.5rem",
         }}
