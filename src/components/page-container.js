@@ -7,19 +7,20 @@ const styles = {
     width: "100vw",
     minHeight: "100vh",
   },
-  title:{
+  title: {
     color: "white",
-    display: 'flex',
-    justifyContent: 'center',
-    paddingBottom: '2vh',
-  }
-}
+    display: "flex",
+    justifyContent: "center",
+    paddingBottom: "2vh",
+  },
+};
 
 export default function PageContainer({ children, title }) {
-  console.log(title)
   return (
-    <Container sx={{...styles.container}} maxWidth="xl">
-      <Typography variant="h4" sx={{...styles.title }}>{title}</Typography>
+    <Container sx={{ ...styles.container }} maxWidth="xl">
+      <Typography variant="h4" sx={{ ...styles.title }}>
+        {title}
+      </Typography>
       {children}
     </Container>
   );
