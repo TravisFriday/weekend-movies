@@ -1,27 +1,26 @@
 import React from "react";
-import useGetPopularMovies from "../api/useGetPopularMovies";
-import useGetGenres from "../api/useGetGenres";
 import MovieList from "../components/movie-list";
-// import { QueryCache } from "react-query";
+import { useQueryClient } from "react-query";
+import { organizePopularMovies } from "../utils/utils";
+import PageContainer from "../components/page-container";
+import { LinearProgress } from "@mui/material";
 
 const Home = () => {
-  //To Move
-  //const query = useGetPopularMovies({ enabled: true });
-
-  const query = useGetGenres({ enabled: true });
-  const { status, data, error } = query;
+  //hook
+  const queryClient = useQueryClient();
+  //get query from the cache
+  const data = queryClient.getQueryData("POPULAR_MOVIES");
 
   return (
-    <div>
-      Hellooooo
-      {status === "success" ? (
+    <PageContainer title={"Popular Movies"}>
+      {data ? (
         <div>
-          <pre>{}</pre>
+          <MovieList movies={organizePopularMovies(data.data.results)} />
         </div>
       ) : (
-        "fetching..."
+        <LinearProgress />
       )}
-    </div>
+    </PageContainer>
   );
 };
 

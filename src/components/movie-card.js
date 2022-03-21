@@ -1,30 +1,73 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { Box, CardActionArea } from "@mui/material";
+import Details from "./details";
 
-export default function ActionAreaCard() {
+const style = {
+  mainBox: {
+    paddingBottom: "3.5rem",
+    transition: "transform 0.15s ease-in-out",
+    ":hover": {
+      transform: "scale3d(1.10, 1.10, 1)",
+    },
+  },
+  card: {
+    width: "90%",
+    height: "100%",
+    ":hover": {
+      boxShadow: "0px 0px 50px",
+    },
+  },
+};
+
+export default function MovieCard(props) {
+  const { original_title, poster_path } = props;
+  //hooks
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  //handlers
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+    <Box sx={{ ...style.mainBox }}>
+      {isModalOpen && (
+        <Details
+          isModalOpen={isModalOpen}
+          handleToggleModal={handleToggleModal}
+          original_title={original_title}
+          {...props}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+      )}
+      <Card
+        sx={{
+          ...style.card,
+        }}
+      >
+        <CardActionArea sx={{ height: "100%" }} onClick={handleToggleModal}>
+          <CardMedia
+            component="img"
+            height="100%"
+            image={poster_path}
+            alt={original_title}
+          />
+        </CardActionArea>
+      </Card>
+      <Typography
+        variant="overline"
+        component="div"
+        sx={{
+          color: "white",
+          fontSize: "1rem",
+          lineHeight: "1rem",
+          paddingTop: "0.5rem",
+        }}
+      >
+        {original_title}
+      </Typography>
+    </Box>
   );
 }
