@@ -1,10 +1,22 @@
 import * as React from "react";
-// import Button from "@mui/material/Button";
+import useGetPopularMovies from "./api/useGetPopularMovies";
+import NavigationBar from "./components/navigation-bar";
 import RoutesList from "./routes";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  div: {
+    backgroundColor: "#1e2126",
+  },
+});
 
 function App() {
+  const classes = useStyles();
+  useGetPopularMovies({ enabled: true });
+
   return (
-    <div className="App">
+    <div className={classes.div}>
+      <NavigationBar />
       <RoutesList />
     </div>
   );
